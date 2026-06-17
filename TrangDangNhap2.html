@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 20px;
+    }
+    .login-wrapper {
+      background-color: #2d7d1e;
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+    .login-card {
+      width: 300px;
+      background-color: #ddd5d5;
+      border-radius: 4px;
+      padding: 22px 22px 28px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+    .login-card h2 {
+      margin-top: 0;
+      color: #000;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-control {
+      border: none;
+      border-bottom: 2px solid #d32f2f;
+      border-radius: 0;
+      background-color: transparent;
+      box-shadow: none;
+      height: 44px;
+      padding-left: 8px;
+    }
+    .form-control:focus {
+      border-color: #007bff;
+      box-shadow: none;
+    }
+    .checkbox label,
+    .radio label {
+      font-size: 14px;
+      color: #121212;
+      font-weight: 500;
+    }
+    .btn-submit {
+      width: 100%;
+      background-color: #0ea360;
+      border-color: #0ea360;
+      color: #fff;
+      font-size: 16px;
+      padding: 10px 16px;
+      border-radius: 3px;
+      box-shadow: inset 0 -4px 0 rgba(0,0,0,0.12);
+    }
+    .btn-submit:hover,
+    .btn-submit:focus {
+      background-color: #0b8c51;
+      border-color: #0b8c51;
+      color: #fff;
+    }
+    .result-message {
+      display: none;
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 4px;
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 260px;
+        padding: 10px 16px;
+        border-radius: 12px;
+        background-color: #f1f5ff;
+        color: #2f4f8b;
+        border: 1px solid #d3d9f3;
+        text-decoration: none;
+        font-size: 16px;
+        transition: background-color 0.2s ease, transform 0.15s ease;
+        }
+
+    .back-btn:hover {
+        background-color: #e6edff;
+        transform: translateY(-1px);
+        }
+  </style>
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="login-card">
+      <h2>Đăng nhập</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <input type="text" class="form-control" id="username" placeholder="Tên đăng nhập" required>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" id="password" placeholder="Mật khẩu" required>
+      </div>
+      <div class="form-group">
+        <div class="radio">
+          <label><input type="radio" name="gender" value="Nam" checked> Nam</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="gender" value="Nữ"> Nữ</label>
+        </div>
+      </div>
+      <div class="checkbox" style="margin-top:-10px; margin-bottom: 20px;">
+        <label><input type="checkbox" id="remember"> Lưu giá trị đăng nhập</label>
+      </div>
+      <button type="submit" class="btn btn-submit">Đăng nhập</button>
+      <div id="resultMessage" class="result-message">Đã Đăng ký thành công</div>
+      <div style="margin-top: 18px; text-align: center;">
+        <a href="https://anh201583-wq.github.io/TrangBaiTap-html/" class="back-btn">← Quay lại Trang Bài Tập</a>
+      </div>
+    </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var message = document.getElementById('resultMessage');
+      message.style.display = 'block';
+      message.textContent = 'Đã Đăng ký thành công';
+    });
+  </script>
+
+</body>
+</html>
